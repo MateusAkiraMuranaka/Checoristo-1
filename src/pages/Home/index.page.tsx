@@ -1,4 +1,4 @@
-import { Box, Button, Input, Checkbox, Select } from "@chakra-ui/react";
+import { Box, Flex, Table, Thead, Th, Td, Tbody, Tr, Button, Input, Checkbox, Select } from "@chakra-ui/react";
 import { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
 
@@ -84,7 +84,7 @@ export default function Home() {
     };
 
     return (
-        <div className="w-max-[1100px] w-full border-2 border-red-600 h-auto mb-20 mt-20 flex flex-col justify-center items-center">
+        <div className="w-max-[2200px] w-full border-2 border-red-600 h-auto mb-20 mt-20 flex flex-col justify-center items-center">
             <form onSubmit={(e) => { e.preventDefault(); createItem(); }} className="bg-neutral-50 rounded-3xl p-5 mt-5 ">
                 <Input placeholder="Nome do Item" width={400} mb={2} name="nomeItem" value={formData.nomeItem || ""} onChange={handleChange} required />
                 <Input placeholder="Quantidade" width={400} mb={2} name="quantidade" value={formData.quantidade || ""} onChange={handleChange} required />
@@ -103,15 +103,20 @@ export default function Home() {
                 <Button colorScheme='green' type="submit" isLoading={loading}>Adicionar Item</Button>
             </form>
 
-            <Box className="bg-white h-auto flex flex-col justify-center items-center mt-30">
-                <Box className="bg-slate-500 h-[10rem] rounded-2xl max-w-full flex flex-row justify-between items-center px-5 text-4xl font-bold text-white mt-40" width={1200}>
-                    <Box className="py-7 px-10">Nome</Box>
-                    <Box className="py-7 px-10">Quantidade</Box>
-                    <Box className="py-7 px-10">Descrição</Box>
-                    <Box className="py-7 px-10">Comprado</Box>
+            <Box className="bg-white h-auto flex flex-col justify-left items-center mt-30">
+                <Box className="bg-slate-500 h-[5rem] rounded-2xl max-w-full flex flex-row justify-between 
+                items-center px-5 text-4xl font-bold text-white mt-40" width={1600}>
+                    <Box className="py-7 px-10" style={{ marginRight: '20px' }}>Nome</Box>
+                    <Box className="py-7 px-10" style={{ marginRight: '20px' }}>Quantidade</Box>
+                    <Box className="py-7 px-10" style={{ marginRight: '20px' }}>Descrição</Box>
+                    <Box className="py-7 px-10" style={{ marginRight: '20px' }}>Categoria</Box>
+                    <Box className="py-7 px-10" style={{ marginRight: '20px' }}>Comprado</Box>
+                    <Box className="py-7 px-10" style={{ marginRight: '20px' }}></Box>
                 </Box>
                 {items.map(item => (
-                    <Box key={item.idItem} className="bg-gray-100 border border-gray-200 rounded-lg max-w-full flex flex-row justify-between items-center px-5 text-lg font-medium text-gray-800 mt-3" width={1200}>
+                    <Box key={item.idItem} className="bg-gray-100 border border-gray-200 rounded-lg 
+                    max-w-full flex flex-row justify-between items-center px-5 text-lg font-medium 
+                    text-gray-800 mt-3" width={1200}>
                         <Box className="py-4 px-10">{item.nomeItem}</Box>
                         <Box className="py-4 px-10">{item.quantidade}</Box>
                         <Box className="py-4 px-10">{item.descricao}</Box>
