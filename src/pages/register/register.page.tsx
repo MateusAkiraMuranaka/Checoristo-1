@@ -11,7 +11,7 @@ import { api } from "@/lib/axios";
 //Define a estrutura dos campos do Formulario
 const claimUsernameFormSchema = z.object({
     email: z.string().min(3)  //min(3)- Minimo de caracteres 
-        .regex(/^([a-z\@\-]+)$/i), // Quais Caravteres vou permitir preencher
+        .regex(/^([a-z\@\-]+)$/i), // Quais Caracteres vou permitir preencher
     senha: z.string(),
     name: z.string().min(3) 
 })
@@ -42,18 +42,17 @@ export default function ClaimUsernameForm() {
         } catch (err) {
             console.log(err)
         }
-
     }
 
     return (
         <Box className=" max-h-full bg-neutral-500">
-            <Box className="flex items-center justify-center py-52 " >
-                <Box width={1000} className="flex flex-row shadow-2xl ">
+            <Box className="flex flex-column items-center justify-center py-52 ">
+                <Box width={600} className="shadow-2xl ">
                     <Box className="bgRegister flex flex-col justify-center items-center">
-                        <Image src={LogoProjeto} alt="ChecolistoLogo" ></Image>
+                    <Image src={LogoProjeto} alt="ChecolistoLogo" ></Image>
                     </Box>
-                    <Box className="flex flex-col justify-center items-center w-full bg-neutral-50  " >
-                        <Box width={360} className="text-xl text-center text-defaultBlue font-bold ">Prepare-se para uma experiência de compras intuitiva e eficiente. Bem-vindo ao nosso aplicativo de lista de compras</Box>
+                    <Box className="flex flex-col justify-center items-center w-full bg-neutral-50 ">
+                        <Box width={360} className="text-xl text-center text-defaultBlue font-bold "></Box>
                         <FormControl as="form" className=" flex flex-col justify-center items-center">
                             <FormLabel className=" mt-1 text-defaultBlue">Nome</FormLabel>
                             <Input width={400} bg={"lightgrey"} className="rounded-sm " type='text' boxShadow='outline' rounded='md' {...register('name')} />
@@ -70,6 +69,5 @@ export default function ClaimUsernameForm() {
                 </Box>
             </Box>
         </Box>
-
     )
 }
