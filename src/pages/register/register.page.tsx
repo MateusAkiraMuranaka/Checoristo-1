@@ -46,13 +46,13 @@ export default function ClaimUsernameForm() {
 
     return (
         <Box className=" max-h-full bg-neutral-500">
-            <Box className="flex flex-column items-center justify-center py-52 ">
-                <Box width={600} className="shadow-2xl ">
-                    <Box className="bgRegister flex flex-col justify-center items-center">
-                    <Image src={LogoProjeto} alt="ChecolistoLogo" ></Image>
+            <Box className="flex items-center justify-center py-32 " >
+                <Box width={800} className="flex flex-col shadow-2xl ">
+                    <Box  className="bg-white flex flex-col items-center rounded-t-xl border-2 border-red-500">
+                        <Image src={LogoProjeto} alt="ChecolistoLogo"  ></Image>
                     </Box>
-                    <Box className="flex flex-col justify-center items-center w-full bg-neutral-50 ">
-                        <Box width={360} className="text-xl text-center text-defaultBlue font-bold "></Box>
+                    <Box className="flex flex-col justify-center items-center w-full bg-neutral-50  " >
+                        <Box width={360} className="text-xl text-center text-defaultBlue font-bold ">Prepare-se para uma experiência de compras intuitiva e eficiente. Bem-vindo ao nosso aplicativo de lista de compras</Box>
                         <FormControl as="form" className=" flex flex-col justify-center items-center">
                             <FormLabel className=" mt-1 text-defaultBlue">Nome</FormLabel>
                             <Input width={400} bg={"lightgrey"} className="rounded-sm " type='text' boxShadow='outline' rounded='md' {...register('name')} />
@@ -63,7 +63,7 @@ export default function ClaimUsernameForm() {
                             <FormLabel className=" mt-1 text-defaultBlue">Senha</FormLabel>
                             <Input width={400} bg={"lightgrey"} className="rounded-sm " type='password' boxShadow='outline' rounded='md' {...register('senha')} />
 
-                            <Button className="mt-6" colorScheme='blue' type="submit" onClick={(e) => handleSubmit(e)}>Cadastrar</Button>
+                            <Button className="mt-6 mb-5" colorScheme='blue' type="submit" onClick={(e) => handleSubmit(e)}>Cadastrar</Button>
                         </FormControl>
                     </Box>
                 </Box>
