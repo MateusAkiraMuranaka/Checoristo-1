@@ -52,7 +52,6 @@ export default function ClaimUsernameForm() {
                         <Image src={LogoProjeto} alt="ChecolistoLogo"  ></Image>
                     </Box>
                     <Box className="flex flex-col justify-center items-center w-full bg-neutral-50  " >
-                        <Box width={360} className="text-xl text-center text-defaultBlue font-bold ">Prepare-se para uma experiência de compras intuitiva e eficiente. Bem-vindo ao nosso aplicativo de lista de compras</Box>
                         <FormControl as="form" className=" flex flex-col justify-center items-center">
                             <FormLabel className=" mt-1 text-defaultBlue">Nome</FormLabel>
                             <Input width={400} bg={"lightgrey"} className="rounded-sm " type='text' boxShadow='outline' rounded='md' {...register('name')} />
